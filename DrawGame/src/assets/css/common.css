@@ -1,0 +1,106 @@
+body {
+    /* max-width: 450px; */
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    /* background: #f2f2f2; */
+}
+
+.w {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+input {
+    background: none;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* input:focus {
+    border: none;
+} */
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.clear:after,
+.clear:before {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cdk-overlay-container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.slide-fade-enter-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.3s ease;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: scale(0);
+}
+
+/* .el-scrollbar__wrap {
+  overflow-x: hidden;
+  margin-bottom: 0;
+} */
+
+.overlay-container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.font_go {
+    font-family: "GOTHICBI";
+}
