@@ -1,0 +1,292 @@
+.nft-pool {
+  width: 1200px;
+  margin: 50px auto 20px;
+  .pool {
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    width: 100%;
+    height: 100px;
+    background: #ed502e;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px 0 30px;
+    box-sizing: border-box;
+    color: #fff;
+    .icon {
+      img {
+        height: 30px;
+        width: 30px;
+      }
+    }
+    .apr {
+      width: 20%;
+      height: 58px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // align-items: flex-start;
+      .title {
+        font-size: 14px;
+        color: #fff;
+      }
+      .value {
+        font-size: 26px;
+        // text-align: left;
+        font-style: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+      }
+    }
+    .total {
+      width: 30%;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-sizing: border-box;
+    .available {
+      height: 20px;
+      width: 300px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 16px;
+      em {
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        text-align: left;
+        font-style: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .input-box {
+      width: 300px;
+      height: 40px;
+      position: relative;
+      input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        height: 40px;
+        background: #ebebeb;
+        line-height: 40px;
+        font-size: 16px;
+        padding: 0 40px 0 10px;
+        box-sizing: border-box;
+      }
+      .max {
+        position: absolute;
+        height: 20px;
+        width: 30px;
+        top: 10px;
+        right: 5px;
+        background: #ed502e;
+        border-radius: 3px;
+        font-size: 10px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+    .button {
+      width: 300px;
+      height: 40px;
+      font-weight: 600;
+      margin-top: 60px;
+      font-size: 16px;
+      cursor: pointer;
+      font-family: "Raleway", sans-serif;
+      color: #ed502e;
+      border-radius: 5px;
+      border: 2px solid #ed502e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      background: #fff;
+      &:hover {
+        background: #ed502e;
+        color: #fff;
+      }
+    }
+    .button.active {
+      color: #aaa;
+      border: 2px solid #aaa;
+      cursor: not-allowed;
+      &:hover {
+        background-color: #aaa;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+    .stake-btn {
+      margin-top: 20px;
+    }
+    .nft-list {
+      // width: 300px;
+      height: 80px;
+      overflow: hidden;
+      .text {
+        text-align: left;
+        line-height: 20px;
+      }
+      .link {
+        width: 300px;
+        cursor: pointer;
+        color: #ed502e;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #nft-pool {
+    width: 800px;
+    margin: 40px auto 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    .header {
+      .apr {
+        .value {
+          font-size: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    .bottom {
+      padding-left: 20px;
+      padding-right: 20px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      .stake,
+      .unstake,
+      .claim {
+        width: 220px;
+        .available {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .input-box {
+          width: 100%;
+        }
+        .button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  #nft-pool {
+    width: 500px;
+    margin: 40px auto 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    .header {
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 15px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      .icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        img {
+          margin-right: 15px;
+        }
+      }
+      .apr {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        .title {
+          color: #e7e7e7;
+        }
+        .value {
+          font-size: 18px;
+          width: 60%;
+          text-align: right;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    .bottom {
+      width: 100%;
+      padding: 25px 15px 40px 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      .stake,
+      .unstake,
+      .claim {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+        .available {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .input-box {
+          width: 100%;
+        }
+        .button {
+          width: 100%;
+          margin-top: 15px;
+          background: #ed502e;
+          color: #fff;
+          border: none;
+          cursor: none;
+        }
+      }
+      .unstake,
+      .claim {
+        margin-top: 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #nft-pool {
+    width: 100%;
+    margin: 40px auto 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,335 @@
+.admin-box-wrap {
+  box-sizing: border-box;
+  margin: 0 auto;
+  .section {
+    height: 120px;
+  }
+  .area {
+    width: 1296px;
+    margin: 0 auto;
+  }
+  .record {
+    min-height: 700px;
+
+    .title {
+      font-size: 25px;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+      .img-list {
+        width: 196px;
+        height: 330px;
+        margin: 0 10px;
+        padding: 30px;
+        box-sizing: border-box;
+        box-shadow: 0 0 20px 0 rgba(139, 88, 88, 0.1);
+        margin-bottom: 25px;
+        transform: translateY(80px);
+        &.active {
+          transform: translateY(0);
+          transition: all 0.8s;
+        }
+        .img-box {
+          width: 136px;
+          height: 136px;
+          overflow: hidden;
+          box-sizing: border-box;
+          img {
+            display: block;
+            width: 100%;
+            margin: 0;
+          }
+        }
+        p {
+          padding: 20px 0 0 0;
+          margin: 0;
+          font-family: "Raleway", sans-serif;
+          font-size: 14px;
+          text-align: left;
+          line-height: 21px;
+          font-weight: 400;
+        }
+        .buy {
+          font-weight: 600;
+          display: block;
+          margin-top: 15px;
+          color: #164682;
+          font-size: 15px;
+          font-family: "Poppins", sans-serif;
+          transition: ease-in-out 0.3s;
+          cursor: pointer;
+          position: relative;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .el-button--small {
+            width: 60px;
+            margin: 0;
+            padding: 8px 2px;
+            text-align: center;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.board-refresh {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+
+  .icon {
+    margin: 0 auto;
+    font-size: 50px;
+    color: #2194d8;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+
+  span {
+    line-height: 30px;
+    font-size: 18px;
+    color: #2194d8;
+    margin-top: 10px;
+  }
+}
+
+.auction-box {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    width: 350px;
+    height: 350px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .head {
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+
+      .close {
+        position: absolute;
+        top: -3px;
+        right: 0;
+        font-size: 25px;
+        color: #409eff;
+        cursor: pointer;
+      }
+    }
+
+    .block {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 20px;
+
+      .end-time {
+        width: 85px;
+        min-width: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+
+        span {
+          color: red;
+        }
+      }
+
+      /deep/ .el-input__inner {
+        width: 200px;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      margin-top: 30px;
+
+      .el-button--primary {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.end-time-box {
+  .box {
+    .block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .end-time {
+        width: 200px;
+        height: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .el-date-editor {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.withdraw-box {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box {
+    width: 350px;
+    height: 305px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    .head {
+      font-size: 20px;
+      color: #000;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+
+      .close {
+        position: absolute;
+        top: -3px;
+        right: 0;
+        font-size: 25px;
+        color: #409eff;
+        cursor: pointer;
+      }
+    }
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 5px;
+
+      .end-time {
+        width: 250px;
+        height: 20px;
+        text-align: left;
+        margin-top: 5px;
+
+        span {
+          color: red;
+        }
+      }
+
+      /deep/ .el-input__inner {
+        width: 250px;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+      margin-top: 30px;
+
+      .el-button--primary {
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  #admin-wrap {
+    .area {
+      width: 1080px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #admin-wrap {
+    .area {
+      width: 864px;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #admin-wrap {
+    .area {
+      width: 648px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #admin-wrap {
+    .area {
+      width: 432px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #admin-wrap {
+    .area {
+      width: 100%;
+      padding: 0 15px;
+    }
+    #record {
+      width: 100%;
+      ul {
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .img-list {
+        width: 160px;
+        height: 300px;
+        padding: 15px 15px;
+        margin: 0px;
+        margin-bottom: 20px;
+
+        .img-box {
+          width: 128px;
+          height: 128px;
+        }
+
+        p {
+          padding-top: 15px;
+          padding: 25px 2px 0 10px;
+        }
+      }
+    }
+  }
+}

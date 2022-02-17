@@ -3,6 +3,9 @@
     <div class="header">
       <Header></Header>
     </div>
+    <div class="content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -11,45 +14,10 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   components: { Header },
-  setup() {},
+  setup() { },
 });
 </script>
 <style lang="less" scoped>
-@media screen and (max-width: 500px) {
-  #backToTop {
-    width: 30px;
-    height: 30px;
-    right: 20px;
-    bottom: 10px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-.backToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #ed502e;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 1s;
-  visibility: hidden;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.active {
-  visibility: visible;
-  opacity: 1;
-}
 .kpixel-wrap {
   height: 100%;
   background: #fff;

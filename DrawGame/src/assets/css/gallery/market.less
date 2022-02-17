@@ -1,0 +1,361 @@
+.market-content {
+    width: 1320px;
+}
+
+.market-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #fff;
+
+    .section {
+        height: 200px;
+    }
+
+    .market-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 100px;
+
+        .content-left {
+            margin-right: 100px;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+
+            img {
+                width: 400px;
+                margin-top: 100px;
+            }
+        }
+
+        .content-right {
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: left;
+            // padding-bottom: 30px;
+            box-sizing: border-box;
+
+            .date {
+                font-size: 16px;
+                color: #212529;
+                line-height: 20px;
+                margin-top: 15px;
+            }
+
+            .auction-id {
+                margin: 0 0 15px 0;
+                display: flex;
+                align-items: center;
+
+                .paint-id {
+                    font-size: 35px;
+                    margin: 0 20px;
+                    font-weight: 600;
+                    color: #000000;
+                }
+
+                .icon {
+                    font-size: 25px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+
+                .icon.active {
+                    cursor: not-allowed;
+                    color: #d7d7d7;
+                }
+            }
+
+            .price {
+                display: flex;
+                margin-top: 20px;
+                color: #212529;
+                justify-content: flex-start;
+
+                // .left {
+                //   border-right: 1px solid #212529;
+                // }
+
+                .line {
+                    width: 1px;
+                    height: 100%;
+                    background: #212529;
+                    margin-right: 48px;
+                }
+
+                .left,
+                .right {
+                    width: 240px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 5px;
+                    box-sizing: border-box;
+
+                    .name {
+                        font-size: 16px;
+                        line-height: 20px;
+                        margin-bottom: 10px;
+                    }
+
+                    .num {
+                        font-size: 30px;
+                        font-weight: 500;
+
+                        .currency {
+                            font-size: 20px;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                // .right {
+                //   padding-left: 48px;
+                // }
+            }
+
+            .minbid {
+                margin-top: 30px;
+
+                .top {
+                    font-size: 16px;
+                    color: #212529;
+                    line-height: 20px;
+                }
+
+                .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 5px;
+
+                    .block {
+                        width: 300px;
+                        position: relative;
+
+                        /deep/.el-input__inner {
+                            padding-right: 60px;
+                        }
+
+                        .currency {
+                            position: absolute;
+                            width: 60px;
+                            height: 40px;
+                            right: 0;
+                            top: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 600;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .button {
+                        .el-button--primary {
+                            width: 150px;
+                            background: #ed502e;
+                            border: #ed502e;
+                        }
+                    }
+                }
+            }
+
+            .bid-history {
+                margin-top: 20px;
+
+                li {
+                    width: 100%;
+                    height: 40px;
+                    background-color: rgba(211, 211, 211, 0.2);
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    align-items: center;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-bottom: 5px;
+
+                    img {
+                        width: 25px;
+                        border-radius: 50%;
+                        margin-right: 5px;
+                    }
+
+                    .address {
+                        width: 80%;
+                    }
+
+                    .bid {
+                        margin: auto;
+                        margin-right: 10px;
+                        font-weight: 300;
+                    }
+
+                    a {
+                        span {
+                            display: inline-block;
+                            width: 14px;
+                            height: 14px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 100% auto;
+                            background-image: url("../../images/icon/link.png");
+                        }
+
+                        &:hover span {
+                            background-image: url("../../images/icon/link-active.png");
+                        }
+                    }
+                }
+            }
+
+            .bid-history-button {
+                display: flex;
+                height: 20px;
+                justify-content: flex-start;
+                align-content: center;
+                margin-top: 15px;
+                cursor: pointer;
+
+                i {
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+}
+
+.board-refresh {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+
+    .icon {
+        margin: 0 auto;
+        font-size: 50px;
+        color: #2194d8;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    span {
+        line-height: 30px;
+        font-size: 18px;
+        color: #2194d8;
+        margin-top: 10px;
+    }
+}
+
+.dataEmpty {
+    height: 600px;
+}
+
+@media screen and (max-width: 1400px) {
+    .market-content {
+        width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .market-content {
+        width: 800px;
+    }
+
+    #market-content {
+        .content-left {
+            margin-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .market-content {
+        width: 600px;
+    }
+
+    #market-content {
+        .content-left {
+            margin-right: 0;
+        }
+    }
+
+    #record {
+        ul {
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .market-content {
+        width: 500px;
+    }
+
+    #market-content {
+        .content-left {
+            margin-right: 0;
+        }
+
+        .content-right {
+            width: 400px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #section {
+        height: 80px;
+    }
+
+    #market-content {
+        width: 100%;
+
+        .content-left {
+            padding: 0 15px;
+            height: 350px;
+
+            img {
+                width: 300px;
+                margin-top: 30px;
+            }
+        }
+
+        .content-right {
+            width: 300px;
+            box-sizing: border-box;
+            overflow: hidden;
+
+            .date,
+            .id {
+                width: 100%;
+            }
+
+            .price {
+                flex-wrap: wrap;
+            }
+
+            .line {
+                display: none;
+            }
+
+            .el-button--primary {
+                width: 80px;
+                margin-left: 10px;
+            }
+        }
+    }
+}

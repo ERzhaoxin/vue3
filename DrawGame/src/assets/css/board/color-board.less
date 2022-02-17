@@ -1,0 +1,253 @@
+.color-board-wrap {
+  .color-box {
+    width: 405px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+
+    .color-palette {
+      width: 180px;
+      padding: 10px;
+      background: #f9f9f9;
+      display: flex;
+      flex-flow: row wrap;
+      align-content: space-around;
+      justify-content: space-around;
+
+      p {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        border: solid 1px #d0d0d0;
+      }
+    }
+
+    .colorpicker-pancel {
+      background: rgb(255, 255, 255);
+      box-sizing: initial;
+      width: 225px;
+      font-family: Menlo;
+
+      .pancel-box {
+        width: 100%;
+        padding-bottom: 55%;
+        position: relative;
+        border-radius: 2px 2px 0px 0px;
+        overflow: hidden;
+
+        .color-pancel {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          left: 0px;
+
+          .saturation-white {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+
+            .saturation-black {
+              position: absolute;
+              top: 0px;
+              right: 0px;
+              bottom: 0px;
+              left: 0px;
+            }
+
+            .pickerBtn {
+              position: absolute;
+              top: 0%;
+              left: 100%;
+              cursor: default;
+
+              .btn {
+                width: 12px;
+                height: 12px;
+                border-radius: 6px;
+                box-shadow: rgb(255, 255, 255) 0px 0px 0px 1px inset;
+                transform: translate(-6px, -6px);
+              }
+            }
+          }
+        }
+      }
+
+      .control-bar {
+        padding: 0 16px 20px;
+
+        .flexbox-fix {
+          display: flex;
+          align-items: center;
+          height: 40px;
+
+          .fix-left {
+            width: 32px;
+
+            .circle {
+              width: 16px;
+              height: 16px;
+              border-radius: 8px;
+              position: relative;
+              overflow: hidden;
+
+              .colorpicker-showColor {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                border-radius: 8px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset;
+                background: #000;
+                z-index: 2;
+              }
+
+              .colors {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg) left center;
+              }
+            }
+          }
+
+          .fix-right {
+            -webkit-box-flex: 1;
+            flex: 1 1 0%;
+
+            .bar-box {
+              height: 10px;
+              position: relative;
+
+              .bar {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+
+                .hue-horizontal {
+                  padding: 0px 2px;
+                  position: relative;
+                  height: 100%;
+
+                  .colorBar-color-picker {
+                    position: absolute;
+                    left: 0%;
+
+                    .picker {
+                      width: 12px;
+                      height: 12px;
+                      border-radius: 6px;
+                      transform: translate(-6px, -1px);
+                      background-color: rgb(248, 248, 248);
+                      box-shadow: rgba(0, 0, 0, 0.37) 0px 1px 4px 0px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .flexbox-fix-bottom {
+          display: flex;
+
+          .colorpicker-inputWrap {
+            -webkit-box-flex: 1;
+            flex: 1 1 0%;
+            display: flex;
+            margin-left: -6px;
+
+            .input-box {
+              padding-left: 6px;
+              width: 100%;
+              box-sizing: border-box;
+
+              .input-content {
+                position: relative;
+
+                .colorpicker-hexInput {
+                  font-size: 11px;
+                  color: rgb(51, 51, 51);
+                  width: 100%;
+                  border-radius: 2px;
+                  border: none;
+                  box-shadow: rgb(218 218 218) 0px 0px 0px 1px inset;
+                  height: 21px;
+                  text-align: center;
+                  box-sizing: border-box;
+                }
+
+                span {
+                  text-transform: uppercase;
+                  font-size: 11px;
+                  line-height: 11px;
+                  color: rgb(150, 150, 150);
+                  text-align: center;
+                  display: block;
+                  margin-top: 12px;
+                }
+              }
+            }
+          }
+
+          .colorpicker-showModeBtn {
+            width: 32px;
+            text-align: right;
+            position: relative;
+
+            .showModeBtn-pic {
+              margin-right: -4px;
+              cursor: pointer;
+              position: relative;
+
+              svg {
+                width: 24px;
+                height: 24px;
+                border: 1px solid transparent;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .saturation-white {
+    background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0));
+  }
+
+  .saturation-black {
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+  }
+
+  .hue-horizontal {
+    background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+  }
+
+  .hue-vertical {
+    background: linear-gradient(to top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #color-board-wrap {
+    width: 360px;
+    margin: 0 auto;
+
+    .color-box {
+      width: 100%;
+
+      .color-palette {
+        padding: 0;
+      }
+    }
+  }
+}
