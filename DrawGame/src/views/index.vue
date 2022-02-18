@@ -1,21 +1,29 @@
 <template>
-  <div class="kpixel-wrap" ref="pixelWrap">
-    <div class="header">
+  <div class="kpixel-wrap" ref="pixelWrap" @scroll="scroll">
+    <div
+      :class="{ 'header': true, 'header-scrolled': isChangeHeight, }"
+      :style="`width:${hWidth}px`"
+    >
       <Header></Header>
     </div>
-    <div class="content">
+    <div class="content" ref="content" v-resize:200="onResize">
       <router-view></router-view>
     </div>
   </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
 import Header from "../components/header/Header.vue";
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  components: { Header },
-  setup() { },
-});
+import { onMounted, ref, reactive, defineExpose } from "vue";
+const content = ref();
+const pixelWrap = ref();
+const hWidth = ref("calc(100vw)");
+const isChangeHeight = ref(false);
+const scroll = () => {
+  isChangeHeight.value = pixelWrap.value.scrollTop > 80 ? true : false;
+};
+const onResize = () => {
+  hWidth.value = content.value.clientWidth;
+}
 </script>
 <style lang="less" scoped>
 .kpixel-wrap {
@@ -34,10 +42,6 @@ export default defineComponent({
     background-color: #fff;
     transition: all 0.5s;
 
-    &.active {
-      transition: all 0.5s;
-      width: calc(100vw - 17px);
-    }
     &.header-scrolled {
       padding: 12px 0;
       box-shadow: 0px 2px 15px #c1c3bb;

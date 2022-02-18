@@ -2,7 +2,7 @@
   <div class="top-bar" id="top-bar">
     <div class="head-content">
       <div class="logo" @click="$router.push('/')">
-        <img src="../../assets/images/home/logo.png" alt="" />
+        <img src="../../assets/images/home/logo.png" />
       </div>
       <div class="unfold">
         <Tab></Tab>
@@ -11,14 +11,9 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import Tab from "./Tab.vue";
 import Setting from "./Setting.vue";
-export default defineComponent({
-  components: { Tab, Setting },
-  setup() {},
-});
 </script>
 <style lang="less" scoped>
 .top-bar {

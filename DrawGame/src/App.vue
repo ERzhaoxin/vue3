@@ -3,13 +3,8 @@
     <Pixel-Box ref="pixelBox"></Pixel-Box>
   </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
 import PixelBox from "./views/index.vue";
-import { defineComponent } from "vue";
-export default defineComponent({
-  components: { PixelBox },
-  setup() { },
-});
 </script>
 <style lang="less">
 #app {

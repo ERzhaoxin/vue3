@@ -6,54 +6,21 @@
         :key="'nav' + index"
         @click="goToPath(item)"
         :class="{ active: routeName == item.name }"
-      >
-        {{ item.name }}
-      </li>
+      >{{ item.name }}</li>
     </ul>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  setup() {
-    const navList: Array<object> = [
-      {
-        name: "Home",
-        path: "Home",
-      },
-      // {
-      //   name: "Admin",
-      //   path: "Admin",
-      // },
-      {
-        name: "Gallery",
-        path: "Gallery",
-      },
-      {
-        name: "Account",
-        path: "Account",
-      },
-      {
-        name: "Claim",
-        path: "Claim",
-      },
-      {
-        name: "Pools",
-        path: "Pools",
-      },
-      {
-        name: "Help",
-        path: "Help",
-        http: true,
-        url: "https://doc.1kpixel.io/",
-      },
-    ];
-    return {
-      navList,
-    };
-  },
-});
+<script lang="ts" setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { Nav } from '../../types/nav'
+import navList from './tab';
+const router = useRouter();
+const routeName = ref('');
+const goToPath: Function = (item: Nav) => {
+  routeName.value = item.name;
+  router.push(item)
+}
 </script>
 <style lang="less" scoped>
 .unfold {
