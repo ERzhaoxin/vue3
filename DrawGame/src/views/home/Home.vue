@@ -22,16 +22,17 @@
     <div class="area">
       <About></About>
     </div>
-    <!-- <Footer /> -->
+    <Footer></Footer>
   </div>
 </template>
 <script lang="ts" setup>
-// import { useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 import About from "./About.vue";
 import Paint from "./Paint.vue";
-// const router = useRouter();
-const goToRoute = (item: String) => {
-  // router.push(item);
+import Footer from "../../components/Footer.vue";
+const router = useRouter();
+const goToRoute = (item: any) => {
+  router.push(item);
 };
 </script>
 

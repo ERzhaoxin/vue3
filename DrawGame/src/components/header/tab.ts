@@ -4,10 +4,6 @@ const navList: Nav[] = [
     name: "Home",
     path: "home",
   },
-  // {
-  //   name: "Admin",
-  //   path: "Admin",
-  // },
   {
     name: "Gallery",
     path: "gallery",
@@ -25,10 +21,8 @@ const navList: Nav[] = [
     path: "Pools",
   },
   {
-    name: "Help",
-    path: "Help",
-    http: true,
-    url: "https://doc.1kpixel.io/",
+    name: "Admin",
+    path: "Admin",
   },
 ];
 
