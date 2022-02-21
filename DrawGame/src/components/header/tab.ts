@@ -22,7 +22,7 @@ const navList: Nav[] = [
   },
   {
     name: "Admin",
-    path: "Admin",
+    path: "admin",
   },
 ];
 
