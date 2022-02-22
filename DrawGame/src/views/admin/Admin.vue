@@ -9,7 +9,6 @@
 </template>
 <script lang="ts" setup>
 import OpenCanvas from './OpenNewCanvas.vue';
-
 </script>
 
 <style lang="less" scoped>

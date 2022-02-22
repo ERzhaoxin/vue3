@@ -13,7 +13,7 @@
 </template>
 <script lang="ts" setup>
 import Header from "../components/header/Header.vue";
-import { onMounted, ref, reactive, defineExpose } from "vue";
+import { onMounted, ref, reactive } from "vue";
 const content = ref();
 const pixelWrap = ref();
 const hWidth = ref("calc(100vw)");

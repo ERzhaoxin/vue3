@@ -1,23 +1,22 @@
-import axios from 'axios'
-import Vue from 'vue'
+import axios from 'axios';
 // create an axios instance
 const service = axios.create({
-        baseURL: '',
-        // baseURL: '/api',
-        timeout: 30000, // 设为30秒
-    })
-    // request interceptor
+    baseURL: '',
+    timeout: 30000, // 设为30秒
+})
+// request interceptor
 service.interceptors.request.use(
     config => {
         // 如果是上传文件，则设置头部
+        const time = new Date().getTime();
         if (config.method == 'post') {
             config.data = {
                 ...config.data,
-                _t: Date.parse(new Date()) / 1000
+                _t: time
             }
         } else if (config.method == 'get') {
             config.params = {
-                _t: Date.parse(new Date()) / 1000,
+                _t: time,
                 ...config.params
             }
         }
@@ -37,7 +36,7 @@ service.interceptors.response.use(
             // 响应拦截器
             return res.data
         } else {
-            Message.error(res.statusText);
+            console.log(res.statusText);
         }
     },
     error => {
@@ -47,10 +46,9 @@ service.interceptors.response.use(
                 error = '网络连接超时'
             }
         } catch (err) {
-            console.log('不是连接超时类型...')
+            console.log('不是连接超时类型...');
         }
-
-        return Promise.reject(error)
+        return Promise.reject(error);
     }
 )
 

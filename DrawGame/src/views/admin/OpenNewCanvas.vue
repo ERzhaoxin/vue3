@@ -16,8 +16,25 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import { addNewCanvas } from "../../axios/api";
+import { ElMessage } from 'element-plus';
 const endTime = ref('');
-const submitCanvas: Function = () => { }
+const submitCanvas: Function = () => {
+  console.log(endTime.value);
+  if (!endTime.value) {
+    ElMessage({
+      message: 'End time can no be empty',
+      type: 'warning',
+    });
+    return;
+  }
+  let params = {
+    time: endTime.value
+  }
+  addNewCanvas(params).then(res => {
+    console.log(res);
+  })
+}
 
 </script>
 
