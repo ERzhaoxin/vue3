@@ -26,6 +26,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+
 /* input:focus {
     border: none;
 } */
@@ -86,6 +87,7 @@ div {
     transform: scale(0);
 }
 
+
 /* .el-scrollbar__wrap {
   overflow-x: hidden;
   margin-bottom: 0;
@@ -103,4 +105,8 @@ div {
 
 .font_go {
     font-family: "GOTHICBI";
+}
+
+.el-loading-mask {
+    background-color: rgba(0, 0, 0, 0.6);
 }

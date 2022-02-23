@@ -10,3 +10,11 @@ export const addNewCanvas = async (obj: any) => {
         params: obj,
     });
 };
+
+//gallery首页返回所有图片
+export const getAllImages = async () => {
+    return request({
+        url: baseUrl + '/api/pixel/getAllArts',
+        method: "get"
+    });
+};

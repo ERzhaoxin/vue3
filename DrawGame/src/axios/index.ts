@@ -48,7 +48,10 @@ service.interceptors.response.use(
         } catch (err) {
             console.log('不是连接超时类型...');
         }
-        return Promise.reject(error);
+        return {
+            result: 0,
+            data: []
+        }
     }
 )
 

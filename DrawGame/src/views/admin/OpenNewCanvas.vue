@@ -17,10 +17,9 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { addNewCanvas } from "../../axios/api";
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElLoading } from 'element-plus';
 const endTime = ref('');
-const submitCanvas: Function = () => {
-  console.log(endTime.value);
+const submitCanvas: Function = async () => {
   if (!endTime.value) {
     ElMessage({
       message: 'End time can no be empty',
@@ -31,9 +30,20 @@ const submitCanvas: Function = () => {
   let params = {
     time: endTime.value
   }
-  addNewCanvas(params).then(res => {
-    console.log(res);
-  })
+  const loadingInstance = ElLoading.service({ text: 'Loading...' });
+  const result: any = await addNewCanvas(params);
+  loadingInstance.close();
+  if (result.result == 0) {
+    ElMessage({
+      message: 'Handle failed',
+      type: 'error',
+    });
+  } else {
+    ElMessage({
+      message: 'Handle success',
+      type: 'success',
+    });
+  }
 }
 
 </script>

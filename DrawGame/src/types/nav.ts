@@ -5,3 +5,4 @@ export interface Nav {
     http?: boolean,
     url?: string,
 }
+
