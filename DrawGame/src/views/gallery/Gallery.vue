@@ -18,7 +18,7 @@
             :class="{ active: item.isTransfrom }"
             v-for="(item, index) in data.artTotalList"
             :key="index + 'test'"
-            @click="goToPaintPage()"
+            @click="goToPaintPage(item)"
           >
             <div class="img-box">
               <img :src="item.image" />
@@ -30,8 +30,10 @@
               <strong>Pixels:</strong>
               {{ item.pixelNum }}
               <br />
+              <strong>Date:</strong>
+              <i>{{ item.endTime }}</i>
             </p>
-            <div :class="isShowPC ? 'join-pc' : 'join-phone'" v-show="item.states != 2">
+            <div :class="isShowPC ? 'join-pc' : 'join-phone'">
               <span>Join us</span>
             </div>
           </li>
@@ -42,23 +44,46 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { useRouter } from "vue-router";
 import { ref, reactive, onMounted } from 'vue';
-import Footer from "../../components/Footer.vue";
 import { getAllImages } from "../../axios/api";
 import { ImgArray } from '../../types/gallery/index';
-
+import Footer from "../../components/Footer.vue";
+import format from '../../assets/js/format'
+const router = useRouter();
 const data: { artTotalList: ImgArray[] } = reactive({
   artTotalList: []
 });
 
-const isShowPC = ref(false);
+const isShowPC = ref(true);
 const getTotalImage = async () => {
   const res: any = await getAllImages();
   if (!res.result) return;
-  data.artTotalList = res.data;
+  data.artTotalList = res.data.map((item: any) => {
+    return {
+      id: item.id,
+      image: item.image,
+      isTransfrom: false,
+      pixelNum: item.list.length,
+      endTime: format(item.time)
+    }
+  });
+  setTimeout(() => {
+    data.artTotalList.forEach((item) => {
+      item.isTransfrom = true;
+    });
+  }, 100)
 }
 const loadMomentImg = () => { };
-const goToPaintPage = () => { };
+const goToPaintPage = (item: ImgArray) => {
+  router.push({
+    name: 'Paint',
+    query: {
+      nftId: item.id,
+    },
+  });
+};
+
 onMounted(() => {
   getTotalImage();
 })
